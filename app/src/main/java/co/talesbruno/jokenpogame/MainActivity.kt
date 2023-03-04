@@ -58,6 +58,23 @@ fun Home(
             }
             is co.talesbruno.jokenpogame.domain.util.Result.Loss -> AlertDialog(onDismissRequest = { mainViewModel.resetGame() },
                 title = { Text(text = "Que pena você perdeu!!!") },
+                text = {
+                    Text(
+                        text = "${
+                            when (stateGame.player) {
+                                1 -> "Pedra"
+                                2 -> "Papel"
+                                else -> "Tesoura"
+                            }
+                        } VS ${
+                            when (stateGame.bot) {
+                                1 -> "Pedra"
+                                2 -> "Papel"
+                                else -> "Tesoura"
+                            }
+                        }"
+                    )
+                },
                 confirmButton = {
                     IconButton(onClick = { mainViewModel.resetGame() }) {
                         Icon(imageVector = Icons.Default.Close, contentDescription = null)
@@ -65,6 +82,23 @@ fun Home(
                 })
             is co.talesbruno.jokenpogame.domain.util.Result.Win -> AlertDialog(onDismissRequest = { mainViewModel.resetGame() },
                 title = { Text(text = "Boa você ganhou!!!") },
+                text = {
+                    Text(
+                        text = "${
+                            when (stateGame.player) {
+                                1 -> "Pedra"
+                                2 -> "Papel"
+                                else -> "Tesoura"
+                            }
+                        } VS ${
+                            when (stateGame.bot) {
+                                1 -> "Pedra"
+                                2 -> "Papel"
+                                else -> "Tesoura"
+                            }
+                        }"
+                    )
+                },
                 confirmButton = {
                     IconButton(onClick = { mainViewModel.resetGame() }) {
                         Icon(imageVector = Icons.Default.Close, contentDescription = null)
@@ -72,6 +106,23 @@ fun Home(
                 })
             is co.talesbruno.jokenpogame.domain.util.Result.Draw -> AlertDialog(onDismissRequest = { mainViewModel.resetGame() },
                 title = { Text(text = "Empate tente novamente") },
+                text = {
+                    Text(
+                        text = "${
+                            when (stateGame.player) {
+                                1 -> "Pedra"
+                                2 -> "Papel"
+                                else -> "Tesoura"
+                            }
+                        } VS ${
+                            when (stateGame.bot) {
+                                1 -> "Pedra"
+                                2 -> "Papel"
+                                else -> "Tesoura"
+                            }
+                        }"
+                    )
+                },
                 confirmButton = {
                     IconButton(onClick = { mainViewModel.resetGame() }) {
                         Icon(imageVector = Icons.Default.Close, contentDescription = null)
